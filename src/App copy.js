@@ -14,37 +14,40 @@ import { Navbar } from './components/Navbar';
 const App = () => {
   const socket = io.connect('http://localhost:5000');
   const [users, setUsers] = useState(null);
+  const [loged, setLoged] = useState(false);
   const [user, setUser] = useState({
     active: false,
     name: null,
   });
 
-  const loginClick = (userName, pass) => {
-    const rez = providerValue.users.filter((x) => x.userName === userName);
-    console.log('rez === ', rez);
-    if (rez.length > 0) {
-      toast('This user is logged');
-      return;
-    }
-
-    socket.emit('ping', userName, pass);
-    socket.on('ping', (value) => {
-      console.log('value === ', value);
+  const loginClick = async (userName, pass) => {
+    await socket.emit('ping', userName, pass);
+    await socket.on('ping', (value) => {
       if (!value.active) {
+        console.log('value.active  1 === ', value);
+        setUser(value);
+      } else {
+        setUsers(value);
+      }
+      console.log('value === ', value);
+      // if (!value.active) setLoged(true);
+      // if (value.loged) setLoged(true);
+      // });
+      // console.log('loged ===', loged);
+      console.log('value.active  1 === ', value);
+      if (!value.active) {
+        console.log('neprisijunges');
         const newUser = { active: true, name: userName };
         setUser(newUser);
-        setUsers(value);
-        // setUsers(...users, value);
+        setUsers([...users, newUser]);
         sessionStorage.setItem('user', userName);
+        // window.localStorage.setItem('user', userName);
       } else {
-        // const newUser = { active: false, name: null };
-        // setUser(newUser);
-        // console.log('value.active  1 === ', value);
-        // setUsers(value);
-        // console.log('jau prisijunges');
+        toast('This user is loged');
+        console.log('jau prisijunges');
       }
+      console.log('loginClick providerValue ===', providerValue);
     });
-    console.log(providerValue);
   };
 
   const providerValue = {

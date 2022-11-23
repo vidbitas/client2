@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+.d-flex {
+    display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.j-center {
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.a-center {
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.at-center {
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.j-end {
+    justify-content: end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.space-btw {
+    justify-content: space-between;
+}
+
+.f-column {
+    flex-direction: column;
+}
+
+.f-gap {
+    gap: 10px;
+}
+
+.f-wrap {
+    flex-wrap: wrap;
+}
+
+.grow1 {
+    flex: 1;
+}
+
+.grow2 {
+    flex: 2;
+}
+
+.grow3 {
+    flex: 3;
+}
+
+.grow4 {
+    flex: 4;
+}
+
+.p50 {
+    padding: 50px;
+}
+
+.p5 {
+    padding: 5px;
+}
+
+.pt50 {
+    padding-top: 50px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+a {
+    margin: 10px;
+}
+
+img {
+    height: 200px;
+}
+
+.room {
+    height: 400px;
+    width: 400px;
+    border: 1px solid gray;
+}
+
+.inroom {
+    height: 100%;
+    width: 40%;
+    border: 1px solid gray;
+}
+
+.roomXY {
+    width: 80%;
+    height: 30px;
+    border: 1px solid grey;
+}
+
+.roomXYactive {
+    width: 100%;
+    height: 30px;
+    border: 1px solid green;
+    background-color: gray;
+    color: aliceblue;
+}
+
+.roomXY:hover {
+    border: 1px solid red;
+}
+
+.owscroll {
+    overflow-y: scroll;
+}
+
+.rooms {
+    height: 300px;
+    width: 100%;
+    border: 1px solid gray;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.rooms-add {
+    width: 100%;
+    margin: 10px;
+    padding: 5px;
+}
+
+.activeRoom {
+    color: aliceblue;
+    background-color: gray;
+}
+
+.focusas:hover {
+    color: aliceblue;
+    background-color: gray;
+}
+
+.chats {
+    height: 300px;
+    width: 100%;
+    border: 1px solid gray;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.chatlist {
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+}
+
+.w50 {
+    width: 25%;
 }
